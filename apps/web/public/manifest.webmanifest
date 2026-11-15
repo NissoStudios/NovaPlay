@@ -1,0 +1,23 @@
+{
+  "name": "NovaPlay — Powered by Nisso Studios",
+  "short_name": "NovaPlay",
+  "description": "Des jeux originaux, instantanés et gratuits directement dans votre navigateur. Powered by Nisso Studios.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#090b16",
+  "theme_color": "#090b16",
+  "icons": [
+    {
+      "src": "/novaplay-logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

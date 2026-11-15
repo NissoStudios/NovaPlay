@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="fr" data-theme="verdant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#07140f" />
+    <title>Eco Arcade Hub 3D — NovaPlay</title>
+    <link rel="stylesheet" href="/games3d/hub3d.css" />
+  </head>
+  <body>
+    <div class="hub">
+      <aside class="sidebar">
+        <div class="brand">
+          <img
+            src="/novaplay-logo.png"
+            alt="NovaPlay"
+            width="40"
+            height="40"
+            style="object-fit:contain;flex:0 0 auto;filter:drop-shadow(0 8px 18px rgba(86,243,154,.22));"
+          />
+          <span class="brand__text">
+            <strong>Eco Arcade 3D</strong>
+            <small>Powered by Nisso Studios</small>
+          </span>
+        </div>
+
+        <div class="balance-card">
+          <small>Solde global</small>
+          <strong><span class="coin-dot">N</span><span data-coins>30</span></strong>
+          <span>Multiplicateur <b data-multiplier>x1</b></span>
+        </div>
+
+        <p class="nav-label">Choisir une expérience 3D</p>
+        <nav class="game-nav" id="desktopNav" aria-label="Jeux 3D du hub"></nav>
+
+        <div class="sidebar__footer">
+          <a class="back-link" href="/arcade-hub.html">← Hub 2D (5 jeux)</a>
+          <button class="shop-button" data-open-shop type="button">
+            <span>◈</span> Ouvrir la boutique
+          </button>
+          <span class="save-status">Progression enregistrée localement</span>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <div class="current-game">
+            <small id="gameGenre">Course 3D • Arcade</small>
+            <strong id="gameTitle">Neon Canopy Rally</strong>
+          </div>
+          <div class="run-settings" id="runSettings"></div>
+          <div class="topbar__actions">
+            <span class="mobile-balance">
+              <span class="coin-dot">N</span>
+              <b data-coins>30</b>
+            </span>
+            <button class="top-icon-button" id="qualityToggle" type="button" title="Qualité graphique 3D">
+              ⚙ <span data-quality-label>Auto</span>
+            </button>
+            <button class="top-icon-button" id="soundToggle" type="button" aria-label="Son" title="Activer / couper le son">
+              🔊
+            </button>
+            <button class="top-shop-button" data-open-shop type="button">
+              <span>◈</span> Boutique
+            </button>
+          </div>
+        </header>
+
+        <section class="stage">
+          <div class="viewport" id="engineViewport" role="application" aria-label="Zone de jeu 3D"></div>
+          <div class="game-meta">
+            <span>⌁ <strong id="gameTip">Flèches / joystick pour diriger, maintiens Maj ou le bouton BOOST.</strong></span>
+            <span>Clavier, souris et tactile • Sauvegarde automatique • Three.js vendoré</span>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <nav class="mobile-nav" id="mobileNav" aria-label="Jeux 3D du hub sur mobile"></nav>
+
+    <div
+      class="modal"
+      id="shopModal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="shopTitle"
+      aria-hidden="true"
+      inert
+    >
+      <section class="shop">
+        <header class="shop__header">
+          <div>
+            <small>Progression globale</small>
+            <h2 id="shopTitle">Boutique Nova</h2>
+          </div>
+          <div>
+            <span class="shop__balance"><span class="coin-dot">N</span><b data-coins>30</b></span>
+            <button class="close-button" id="closeShop" type="button" aria-label="Fermer">×</button>
+          </div>
+        </header>
+        <div class="shop__body">
+          <section class="shop-section">
+            <h3>Thèmes cosmétiques</h3>
+            <p>Débloque une nouvelle ambiance pour tout le hub (partagée avec le hub 2D).</p>
+            <div class="shop-grid" id="themeShop"></div>
+          </section>
+          <section class="shop-section">
+            <h3>Amplificateur de gains</h3>
+            <p>Augmente définitivement toutes les Nova Coins gagnées, y compris dans les 5 jeux 2D.</p>
+            <div id="multiplierShop"></div>
+          </section>
+          <section class="shop-section">
+            <h3>Objets utiles</h3>
+            <p>Des consommables qui t'aident en jeu : certains s'activent automatiquement au lancement d'une run, d'autres se déclenchent manuellement.</p>
+            <div class="item-grid" id="itemShop"></div>
+          </section>
+        </div>
+      </section>
+    </div>
+
+    <div class="toast-region" id="toastRegion" aria-live="polite"></div>
+
+    <script type="module" src="/games3d/hub3d-app.js"></script>
+  </body>
+</html>
